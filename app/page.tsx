@@ -1,9 +1,12 @@
-import Image from "next/image";
+import { Header } from "@/components/header/Header";
+import { HeroSection } from "@/components/heroSection/HeroSection";
+
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <h1>Hello World</h1>
+    <div className="">
+      <Header />
+      <HeroSection />
     </div>
   );
 }
