@@ -32,7 +32,7 @@ export const Footer = () => {
                     </div>
                 </div>
                 <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm animate-fade-in">
-                    <p>&copy; 2024 Your Company. All rights reserved.</p>
+                    <p>&copy; 2026 Your Company. K.Shohjaxon production.</p>
                 </div>
             </div>
 
