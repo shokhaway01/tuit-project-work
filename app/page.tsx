@@ -1,4 +1,5 @@
 import { AboutUs } from "@/components/about us/AboutUs";
+import { Danger } from "@/components/danger/Danger";
 import { Header } from "@/components/header/Header";
 import { HeroSection } from "@/components/heroSection/HeroSection";
 import { StatsSection } from "@/components/stats/Stats";
@@ -11,6 +12,7 @@ export default function Home() {
       <HeroSection />
       <AboutUs />
       <StatsSection />
+      <Danger />
     </div>
   );
 }
