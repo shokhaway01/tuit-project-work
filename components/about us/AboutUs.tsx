@@ -1,6 +1,6 @@
 export const AboutUs = () => {
     return (
-        <section className="py-20 px-4 bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        <section id="#about" className="py-20 px-4 bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
             {/* Animated background elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse"></div>
