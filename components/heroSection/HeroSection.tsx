@@ -23,12 +23,12 @@ export const HeroSection = () => {
                         >
                             Начать обучение
                         </Link>
-                        <a 
-                            href="/#about"
+                        <Link 
+                            href="/contacts"
                             className="px-6 md:px-8 py-2.5 md:py-3 border-2 border-cyan-400 text-cyan-400 font-bold rounded-lg hover:bg-cyan-400/10 transition-all duration-300 uppercase tracking-wider text-sm md:text-base text-center"
                         >
                             Узнать больше
-                        </a>
+                        </Link>
                     </div>
                 </div>
 

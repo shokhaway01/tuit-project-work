@@ -9,12 +9,12 @@ import { StatsSection } from "@/components/stats/Stats";
 export default function Home() {
   return (
     <div className="">
-      <Header />
+      {/* <Header /> */}
       <HeroSection />
       <AboutUs />
       <StatsSection />
       <Danger />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
