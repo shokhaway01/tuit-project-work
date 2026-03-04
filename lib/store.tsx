@@ -17,8 +17,6 @@ interface Tests {
 interface StoreState {
     courses: Course[];
     tests: Tests[];
-    openCourse: (course: Course) => void;
-    removeCourse: (id: number) => void;
 }
 
 const useStore = create<StoreState>((set) => ({
@@ -81,12 +79,6 @@ const useStore = create<StoreState>((set) => ({
             count: 3
         }
     ],
-    openCourse: (course) => {
-        window.location.href = course.id;
-    },
-    removeCourse: (id) => set((state) => ({
-        courses: state.courses.filter(course => course.id !== id)
-    })),
     sendFeedback: async (name: string, phone: string, comment: string) => {
         try {
             const response = await fetch('/api/telegram', {
