@@ -35,15 +35,15 @@ const useStore = create<StoreState>((set) => ({
         },
         {
             id: 4,
-            title: "React Basics",
+            title: "Кибербезопасность и киберпреступность образовательное видео",
             url: "",
             description: "Learn React fundamentals",
         },
         {
             id: 5,
-            title: "React Basics",
-            url: "",
-            description: "Learn React fundamentals",
+            title: "Минута, отдыха от занятий!",
+            url: "https://www.youtube.com/embed/fwVVRigFf1M?si=HZ9R4i3-IxxOecmI",
+            description: "Возьми телефон детка!",
         },
         {
             id: 6,

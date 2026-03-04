@@ -52,18 +52,21 @@ export const Header = () => {
                     <Link 
                         href="/courses" 
                         className="text-slate-300 hover:text-cyan-400 transition-colors duration-300 font-semibold text-sm uppercase tracking-wider"
+                        onClick={() => setIsOpen(!isOpen)}
                     >
                         Курсы
                     </Link>
                     <Link 
                         href="/tests" 
                         className="text-slate-300 hover:text-cyan-400 transition-colors duration-300 font-semibold text-sm uppercase tracking-wider"
+                        onClick={() => setIsOpen(!isOpen)}
                     >
                         Тесты
                     </Link>
                     <Link 
                         href="/contacts" 
                         className="text-slate-300 hover:text-cyan-400 transition-colors duration-300 font-semibold text-sm uppercase tracking-wider"
+                        onClick={() => setIsOpen(!isOpen)}
                     >
                         Контакты
                     </Link>
