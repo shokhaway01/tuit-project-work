@@ -1,69 +1,77 @@
+'use client'
+import  useStore  from "@/lib/store";
+import Link from "next/link";
+
+
 const CoursePage = () => {
-    const courses = [
-        {
-            id: 1,
-            title: "React Basics",
-            description: "Learn React fundamentals",
-            price: "$29.99"
-        },
-        {
-            id: 2,
-            title: "TypeScript Pro",
-            description: "Master TypeScript",
-            price: "$39.99"
-        },
-        {
-            id: 3,
-            title: "Web Design",
-            description: "Create beautiful websites",
-            price: "$24.99"
-        },
-        {
-            id: 4,
-            title: "React Basics",
-            description: "Learn React fundamentals",
-            price: "$29.99"
-        },
-        {
-            id: 5,
-            title: "TypeScript Pro",
-            description: "Master TypeScript",
-            price: "$39.99"
-        },{
-            id: 6,
-            title: "React Basics",
-            description: "Learn React fundamentals",
-            price: "$29.99"
-        },
-        {
-            id: 7,
-            title: "TypeScript Pro",
-            description: "Master TypeScript",
-            price: "$39.99"
-        },{
-            id: 8,
-            title: "React Basics",
-            description: "Learn React fundamentals",
-            price: "$29.99"
-        },
-        {
-            id: 9,
-            title: "TypeScript Pro",
-            description: "Master TypeScript",
-            price: "$39.99"
-        },{
-            id: 10,
-            title: "React Basics",
-            description: "Learn React fundamentals",
-            price: "$29.99"
-        },
-        {
-            id: 11,
-            title: "TypeScript Pro",
-            description: "Master TypeScript",
-            price: "$39.99"
-        },
-    ]
+    // const courses = [
+    //     {
+    //         id: 1,
+    //         title: "React Basics",
+    //         description: "Learn React fundamentals",
+    //         price: "$29.99"
+    //     },
+    //     {
+    //         id: 2,
+    //         title: "TypeScript Pro",
+    //         description: "Master TypeScript",
+    //         price: "$39.99"
+    //     },
+    //     {
+    //         id: 3,
+    //         title: "Web Design",
+    //         description: "Create beautiful websites",
+    //         price: "$24.99"
+    //     },
+    //     {
+    //         id: 4,
+    //         title: "React Basics",
+    //         description: "Learn React fundamentals",
+    //         price: "$29.99"
+    //     },
+    //     {
+    //         id: 5,
+    //         title: "TypeScript Pro",
+    //         description: "Master TypeScript",
+    //         price: "$39.99"
+    //     },{
+    //         id: 6,
+    //         title: "React Basics",
+    //         description: "Learn React fundamentals",
+    //         price: "$29.99"
+    //     },
+    //     {
+    //         id: 7,
+    //         title: "TypeScript Pro",
+    //         description: "Master TypeScript",
+    //         price: "$39.99"
+    //     },{
+    //         id: 8,
+    //         title: "React Basics",
+    //         description: "Learn React fundamentals",
+    //         price: "$29.99"
+    //     },
+    //     {
+    //         id: 9,
+    //         title: "TypeScript Pro",
+    //         description: "Master TypeScript",
+    //         price: "$39.99"
+    //     },{
+    //         id: 10,
+    //         title: "React Basics",
+    //         description: "Learn React fundamentals",
+    //         price: "$29.99"
+    //     },
+    //     {
+    //         id: 11,
+    //         title: "TypeScript Pro",
+    //         description: "Master TypeScript",
+    //         price: "$39.99"
+    //     },
+    // ]
+
+    const courses = useStore( state => state.courses )
+    const openCourse = useStore( state => state.openCourse )
 
     return (
         <div className="p-8">
@@ -73,10 +81,9 @@ const CoursePage = () => {
                     <div key={course.id} className="border rounded-lg p-6 shadow-lg">
                         <h2 className="text-2xl font-semibold mb-2">{course.title}</h2>
                         <p className="text-gray-600 mb-4">{course.description}</p>
-                        <p className="text-xl font-bold mb-4">{course.price}</p>
-                        <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                        <Link href={`/courses/${course.id}`} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
                             More Details
-                        </button>
+                        </Link>
                     </div>
                 ))}
             </div>
