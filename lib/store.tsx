@@ -1,14 +1,22 @@
 import { create } from "zustand";
 
 interface Course {
-    id: any;
+    id: string | number;
     title: string;
     url: string;
     description: string;
 }
 
+interface Tests {
+    id: string | number;
+    title: string,
+    questions: string[];
+    count: number;
+}
+
 interface StoreState {
     courses: Course[];
+    tests: Tests[];
     openCourse: (course: Course) => void;
     removeCourse: (id: number) => void;
 }
@@ -19,7 +27,7 @@ const useStore = create<StoreState>((set) => ({
             id: 1,
             title: "Что такое фишинг и фишинговая атака",
             url: "https://www.youtube.com/embed/bmaU8KA0Mrg?si=GK7hES5GUnsBTvLE",
-            description: "Learn React fundamentals",
+            description: "Тут вы узнаете что такое вообще фишинг и как он работает",
         },
         {
             id: 2,
@@ -52,12 +60,45 @@ const useStore = create<StoreState>((set) => ({
             description: "Learn React fundamentals",
         },
     ],
+    tests: [
+        {
+            id: 1, 
+            title: "Test 1", 
+            questions: [
+                "Question 1", 
+                "Question 2"
+            ], 
+            count:  2,
+        },
+        {
+            id: 2, 
+            title: "Test 2",
+            questions: [
+                "Question 1", 
+                "Question 2",
+                "Question 3"
+            ], 
+            count: 3
+        }
+    ],
     openCourse: (course) => {
         window.location.href = course.id;
     },
     removeCourse: (id) => set((state) => ({
         courses: state.courses.filter(course => course.id !== id)
-    }))
+    })),
+    sendFeedback: async (name: string, phone: string, comment: string) => {
+        try {
+            const response = await fetch('/api/telegram', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, phone, comment })
+            });
+            if (!response.ok) throw new Error('Failed to send feedback');
+        } catch (error) {
+            console.error('Error sending feedback:', error);
+        }
+    }
 }))
 
 export default useStore;

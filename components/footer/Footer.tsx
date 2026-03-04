@@ -6,7 +6,9 @@ export const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                     <div className="animate-fade-in">
                         <h3 className="font-bold mb-4 text-lg">About</h3>
-                        <p className="text-gray-400 text-sm leading-relaxed">Your project description</p>
+                        <p className="text-gray-400 text-sm leading-relaxed">
+                            TUIT Project is a modern web application built with cutting-edge technologies. We create innovative solutions for developers and businesses, delivering high-quality code and exceptional user experiences.
+                        </p>
                     </div>
                     <div className="animate-fade-in animation-delay-100">
                         <h3 className="font-bold mb-4 text-lg">Links</h3>
@@ -26,8 +28,8 @@ export const Footer = () => {
                     <div className="animate-fade-in animation-delay-300">
                         <h3 className="font-bold mb-4 text-lg">Follow</h3>
                         <div className="flex space-x-4">
-                            <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors duration-300">Instagram</a>
-                            <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors duration-300">GitHub</a>
+                            <a href="https://instagram.com/shokhaway" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors duration-300">Instagram</a>
+                            <a href="https://github.com/shokhaway01" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors duration-300">GitHub</a>
                         </div>
                     </div>
                 </div>

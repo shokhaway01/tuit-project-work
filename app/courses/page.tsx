@@ -7,7 +7,7 @@ const CoursePage = () => {
 
     return (
         <div className="min-h-screen bg-slate-950 p-8">
-            <h1 className="text-5xl font-bold mb-12 text-yellow-300">Courses</h1>
+            <h1 className="text-5xl font-bold mt-15 mb-12 text-yellow-300">Курсы</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {courses.map(course => (
                     <div 
