@@ -26,21 +26,22 @@ const page = () => {
                     <div className='space-y-6'>
                         <div>
                             <h1 className='text-4xl font-bold mb-2'>{test.title}</h1>
-                            <p className='text-lg text-gray-400'>{test.count}</p>
+                            <p className='text-lg text-gray-400'>Вы должны ответить на {test.count} вопроса!</p>
                         </div>
 
                         {/* Quiz Questions */}
                         <div className='space-y-6 mt-8'>
                             {test.questions?.map((question, idx) => (
                                 <div key={idx} className='bg-slate-800 rounded-lg p-6 border border-slate-700'>
-                                    <p className='text-lg font-semibold mb-4'>{idx + 1}. {question.text}</p>
+                                    <p className='text-lg font-semibold mb-4'>{idx + 1}. {question}</p>
                                     <div className='space-y-3'>
-                                        {question.options?.map((option, optIdx) => (
+                                        {/* {question?.map((option, optIdx) => (
                                             <label key={optIdx} className='flex items-center p-3 bg-slate-700 rounded cursor-pointer hover:bg-slate-600'>
                                                 <input type='radio' name={`question-${idx}`} className='mr-3' />
                                                 <span>{option}</span>
                                             </label>
-                                        ))}
+                                        ))} */}
+                                        {question}
                                     </div>
                                 </div>
                             ))}
