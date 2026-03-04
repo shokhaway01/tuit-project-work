@@ -1,88 +1,26 @@
 'use client'
-import  useStore  from "@/lib/store";
+import useStore from "@/lib/store";
 import Link from "next/link";
 
-
 const CoursePage = () => {
-    // const courses = [
-    //     {
-    //         id: 1,
-    //         title: "React Basics",
-    //         description: "Learn React fundamentals",
-    //         price: "$29.99"
-    //     },
-    //     {
-    //         id: 2,
-    //         title: "TypeScript Pro",
-    //         description: "Master TypeScript",
-    //         price: "$39.99"
-    //     },
-    //     {
-    //         id: 3,
-    //         title: "Web Design",
-    //         description: "Create beautiful websites",
-    //         price: "$24.99"
-    //     },
-    //     {
-    //         id: 4,
-    //         title: "React Basics",
-    //         description: "Learn React fundamentals",
-    //         price: "$29.99"
-    //     },
-    //     {
-    //         id: 5,
-    //         title: "TypeScript Pro",
-    //         description: "Master TypeScript",
-    //         price: "$39.99"
-    //     },{
-    //         id: 6,
-    //         title: "React Basics",
-    //         description: "Learn React fundamentals",
-    //         price: "$29.99"
-    //     },
-    //     {
-    //         id: 7,
-    //         title: "TypeScript Pro",
-    //         description: "Master TypeScript",
-    //         price: "$39.99"
-    //     },{
-    //         id: 8,
-    //         title: "React Basics",
-    //         description: "Learn React fundamentals",
-    //         price: "$29.99"
-    //     },
-    //     {
-    //         id: 9,
-    //         title: "TypeScript Pro",
-    //         description: "Master TypeScript",
-    //         price: "$39.99"
-    //     },{
-    //         id: 10,
-    //         title: "React Basics",
-    //         description: "Learn React fundamentals",
-    //         price: "$29.99"
-    //     },
-    //     {
-    //         id: 11,
-    //         title: "TypeScript Pro",
-    //         description: "Master TypeScript",
-    //         price: "$39.99"
-    //     },
-    // ]
-
-    const courses = useStore( state => state.courses )
-    const openCourse = useStore( state => state.openCourse )
+    const courses = useStore(state => state.courses)
 
     return (
-        <div className="p-8">
-            <h1 className="text-4xl font-bold mb-8">Courses</h1>
+        <div className="min-h-screen bg-slate-950 p-8">
+            <h1 className="text-5xl font-bold mb-12 text-yellow-300">Courses</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {courses.map(course => (
-                    <div key={course.id} className="border rounded-lg p-6 shadow-lg">
-                        <h2 className="text-2xl font-semibold mb-2">{course.title}</h2>
-                        <p className="text-gray-600 mb-4">{course.description}</p>
-                        <Link href={`/courses/${course.id}`} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                            More Details
+                    <div 
+                        key={course.id} 
+                        className="bg-slate-900 border border-yellow-400/20 rounded-lg p-6 shadow-2xl hover:shadow-yellow-400/20 hover:border-yellow-300/40 transition-all duration-300"
+                    >
+                        <h2 className="text-2xl font-semibold mb-2 text-yellow-300">{course.title}</h2>
+                        <p className="text-gray-300 mb-4">{course.description}</p>
+                        <Link 
+                            href={`/courses/${course.id}`} 
+                            className="inline-block bg-yellow-400 text-slate-950 px-6 py-2 rounded font-semibold hover:bg-yellow-300 transition-colors duration-200"
+                        >
+                            Начать
                         </Link>
                     </div>
                 ))}
