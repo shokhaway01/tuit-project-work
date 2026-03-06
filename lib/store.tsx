@@ -42,7 +42,7 @@ const useStore = create<StoreState>((set) => ({
         {
             id: 4,
             title: "Кибербезопасность и киберпреступность образовательное видео",
-            url: "",
+            url: "https://www.youtube.com/watch?v=k9g6aVLH3p4",
             description: "Learn React fundamentals",
         },
         {
@@ -54,7 +54,7 @@ const useStore = create<StoreState>((set) => ({
         {
             id: 6,
             title: "React Basics",
-            url: "",
+            url: "https://www.youtube.com/embed/k9g6aVLH3p4?si=l-rjo1COCth4lRx-",
             description: "Learn React fundamentals",
         },
     ],
