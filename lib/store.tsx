@@ -10,13 +10,19 @@ interface Course {
 interface Tests {
     id: string | number;
     title: string,
-    questions: string[];
+    questions: Questions[];
     count: number;
+}
+
+interface Questions {
+    question: string;
+    options: string[];
+    answer: string;
 }
 
 interface StoreState {
     courses: Course[];
-    tests: Tests[];
+    // tests: Tests[];
 }
 
 const useStore = create<StoreState>((set) => ({
@@ -42,7 +48,7 @@ const useStore = create<StoreState>((set) => ({
         {
             id: 4,
             title: "Кибербезопасность и киберпреступность образовательное видео",
-            url: "https://www.youtube.com/watch?v=k9g6aVLH3p4",
+            url: "https://www.youtube.com/embed/Y1SekvuZ3M4?si=WtrWhCIcqGXZ92xs",
             description: "Learn React fundamentals",
         },
         {
@@ -58,27 +64,6 @@ const useStore = create<StoreState>((set) => ({
             description: "Learn React fundamentals",
         },
     ],
-    tests: [
-        {
-            id: 1, 
-            title: "Test 1", 
-            questions: [
-                "Question 1", 
-                "Question 2"
-            ], 
-            count:  2,
-        },
-        {
-            id: 2, 
-            title: "Test 2",
-            questions: [
-                "Question 1", 
-                "Question 2",
-                "Question 3"
-            ], 
-            count: 3
-        }
-    ],
     sendFeedback: async (name: string, phone: string, comment: string) => {
         try {
             const response = await fetch('/api/telegram', {
@@ -92,5 +77,13 @@ const useStore = create<StoreState>((set) => ({
         }
     }
 }))
+
+const useQuizStore = create((set) => ({
+    tests: [
+        {
+            id: 1,
+        }
+    ]
+}) )
 
 export default useStore;
