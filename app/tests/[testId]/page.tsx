@@ -12,12 +12,7 @@ const page = () => {
     console.log(testsStore);
 
 
-    const test = useStore( (state) => {
-        const foundTest = testsStore.find( (t:number) => t.id == testId );
-        return foundTest;
-    } )
-
-
+    const test = useStore( () => (testsStore.find( (t) => t.id == Number(testId) )));
 
   return (
     <div className='min-h-screen bg-linear-to-b from-slate-950 to-slate-900 text-white p-6 md:p-12'>
