@@ -9,7 +9,6 @@ const page = () => {
     const testsStore = useStore( (state) => state.tests );
 
 
-    console.log(testsStore);
 
 
     const test = useStore( () => (testsStore.find( (t) => t.id == Number(testId) )));
