@@ -1,15 +1,21 @@
 'use client';
 import useStore from '@/lib/store';
 import { useParams } from 'next/navigation'
-import React from 'react'
 
 const page = () => {
 
     const params = useParams();
     const testId = params.testId;
+    const testsStore = useStore( (state) => state.tests );
 
-    const tests = useStore( (state) => state.tests);
-    const test = tests.find( (t) => t.id == testId );
+
+    console.log(testsStore);
+
+
+    const test = useStore( (state) => {
+        const foundTest = testsStore.find( (t:number) => t.id == testId );
+        return foundTest;
+    } )
 
 
 
@@ -25,18 +31,29 @@ const page = () => {
                     {/* Course Info Section */}
                     <div className='space-y-6'>
                         <div>
-                            <h1 className='text-4xl font-bold mb-2'>{test.title}</h1>
-                            <p className='text-lg text-gray-400'>Вы должны ответить на {test.count} вопроса!</p>
+                            <h1 className='text-4xl font-bold mb-2'>{test.name}</h1>
+                            <h1 className='text-4xl font-bold mb-2'>{test.description}</h1>
+                            <p className='text-lg text-gray-400'>Вы должны ответить на {test.questions?.length} вопроса!</p>
                         </div>
 
                         {/* Quiz Questions */}
                         <div className='space-y-6 mt-8'>
                             {test.questions?.map((question, idx) => (
                                 <div key={idx} className='bg-slate-800 rounded-lg p-6 border border-slate-700'>
-                                    <p className='text-lg font-semibold mb-4'>{idx + 1}. {question}</p>
+                                    <p className='text-lg font-semibold mb-4'>{idx + 1}. {question.question}</p>
                                     <div className='space-y-3'>
                                         
-                                        {question}
+                                        {question.answers.map((answer, aidx) => (
+                                            <div key={aidx} className='flex items-center space-x-3'>
+                                                <input
+                                                    type="radio"
+                                                    name={`question-${idx}`}
+                                                    value={answer.id}
+                                                    className='form-radio text-cyan-500 focus:ring-cyan-500'
+                                                />
+                                                <label className='text-gray-300'>{answer.item}</label>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             ))}
