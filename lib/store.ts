@@ -89,6 +89,7 @@ const useStore = create<StoreState>(() => ({
                 {
                     questionId: 1,
                     question: "Что такое фишинг?",
+                    
                     answers: [
 
                         {
