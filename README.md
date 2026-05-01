@@ -67,8 +67,7 @@
 ## 🎬 Preview
 
 <p align="center">
-  <img src="https://via.placeholder.com/800x400?text=Courses"/>
-  <img src="https://via.placeholder.com/800x400?text=Tests"/>
+  <img src="./Macbook-Air-tuit-project-work.vercel.app-a5izn4v_sy9p7m"/>
 </p>
 
 ---
