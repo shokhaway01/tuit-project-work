@@ -67,7 +67,7 @@
 ## 🎬 Preview
 
 <p align="center">
-  <img src="./Macbook-Air-tuit-project-work.vercel.app-a5izn4v_sy9p7m"/>
+  <img src="./Macbook-Air-tuit-project-work.vercel.app-a5izn4v_sy9p7m.gif"/>
 </p>
 
 ---
